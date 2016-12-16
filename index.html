@@ -1,6 +1,76 @@
+<!DOCTYPT html> 
 <html>
-<title>测试</title>
+  <head>
+<meta charset="UTF-8">
+<title>tab菜单</title>
+ <style type="text/css">
+	    #div1{
+	    	border:1px solid #090;
+	    	width:600px;
+	    	height:400px;
+	    	position: relative;
+	    }
+		input#btn1{
+			position: absolute;
+			top:0px;
+			left:100px;
+		}
+		input#btn2{
+			position: absolute;
+			top:0px;
+			left:200px;
+		}
+		input#btn3{
+			position: absolute;
+			top:0px;
+			left:300px;
+		}
+		#div1 div{
+			display: none;
+			position: absolute;
+			top:50px;
+			left:130px;
+			width:200px;
+			height: 200px;
+			background: #5e5e5e;
+		}
+		.active{
+			background: #c0c;
+		}
+	</style> 
+  <script type="text/javascript">
+		window.onload=function(){
+			var div1=document.getElementById("div1");
+			var divs=div1.getElementsByTagName("div");
+			var btns=div1.getElementsByTagName("input");
+			
+			for(var i=0;i<btns.length;i++){
+				btns[i].onclick=function(){
+				for(var j=0;j<btns.length;j++){
+					divs[j].style.display="none";
+					btns[j].className="";
+				}
+				
+				this.className="active"
+				if(-[1,]){
+					this.nextElementSibling.style.display="block";
+				}else{
+					this.nextSibling.nextSibling.style.display="block";
+				}
+				}
+			}
+
+		}
+	</script>
+  </head>
 <body>
-<p>123</p>
+<div id="div1">
+		<input type="button" name="btn" value="导航一" id="btn1">
+		<div style="display: block">内容一</div>
+		<input type="button" name="btn" value="导航二" id="btn2">
+		<div>内容二</div>
+		<input type="button" name="btn" value="导航三" id="btn3">
+		<div>内容三</div>
+	</div>
 </body>
 </html
